@@ -69,7 +69,7 @@ GET
 ##### variables dictionary needed values
 |Key|Value|
 |---|-----|
-|userID|The user's id (see "User ID and other information)|
+|userID|The user's id as a string (see "User ID and other information)|
 |count|The number of tweets to get|
 |withHighlightedLabel|Some boolean value, no idea what it does, just set it to false|
 |withTweetQuoteCount|Boolean, include how often the tweet was quoted|
