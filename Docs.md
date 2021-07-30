@@ -41,7 +41,7 @@ GET
 |Key|Value|
 |---|-----|
 |screen_name|The user's screen name as shown in the URL|
-|withHighLightedLabel|Some boolean, no idea what it does, just set it to false|
+|withHighlightedLabel|Some boolean, no idea what it does, just set it to false|
 |withSuperFollowsUserFields|Some boolean, no idea what it does, just set it to false|
 
 #### Needed headers
