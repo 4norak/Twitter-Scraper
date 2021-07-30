@@ -11,7 +11,7 @@ Returns a guest token needed for most other endpoints
 https://api.twitter.com/1.1/guest/activate.json
 
 #### Request Method
-GET
+POST
 
 #### Parameters
 None
