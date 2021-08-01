@@ -13,7 +13,7 @@ def get_guest_token() -> str:
     r = requests.post(TwitterResources.ENDPOINT_ACTIVATION, headers={"authorization": TwitterResources.BEARER_TOKEN})
     return r.json()["guest_token"]
 
-def get_user_id(guestToken: str, screenName: str, *kwargs) -> str:
+def get_user_id(guestToken: str, screenName: str, **kwargs) -> str:
     params = {"screen_name": screenName,
             "withHighlightedLabel": False,
             "withSuperFollowsUserFields": False}
