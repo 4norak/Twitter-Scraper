@@ -104,7 +104,7 @@ GET
 
 #### Parameters
 |Name|Required|Type|Values|
-|----|:------:|------|
+|----|:------:|----|------|
 |q|:heavy_check_mark:|String|The search string|
 |pc| |Boolean|Seems to do nothing|
 |ext| |String|Percentage encoded comma separated fields to include in "ext" field|
