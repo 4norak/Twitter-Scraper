@@ -23,7 +23,7 @@ None
 |----|-----|
 |authorization|Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA|
 
-### User ID and other information
+### User ID and other User Information
 
 #### Description
 Returns a couple of user information, including the id required for most other endpoints that require a user to be specified.
@@ -35,25 +35,25 @@ https://twitter.com/i/api/graphql/G07SmTUd0Mx7qy3Az_b52w/UserByScreenNameWithout
 GET
 
 #### Parameters
-|Name|Required|Value|
-|----|--------|-----|
-|variables|:heavy_check_mark:|A percentage encoded dictionary (see below)|
+|Name|Required|Type|Value|
+|----|--------|----|-----|
+|variables|:heavy_check_mark:|String|A percentage encoded json dictionary (see below)|
 
 ##### variables dictionary values
-|Key|Required|Value|
-|---|--------|-----|
-|screen_name|:heavy_check_mark:|The user's screen name as shown in the URL|
-|withHighlightedLabel|:heavy_check_mark:|Some boolean, no idea what it does, just set it to false|
-|withSuperFollowsUserFields|:heavy_check_mark:|Some boolean, no idea what it does, just set it to false|
+|Key|Required|Type|Value|
+|---|--------|----|-----|
+|screen_name|:heavy_check_mark:|String|The user's screen name as shown in the URL|
+|withHighlightedLabel|:heavy_check_mark:|Boolean|No idea what it does, just set it to false|
+|withSuperFollowsUserFields|:heavy_check_mark:|Boolean|No idea what it does, just set it to false|
 
-#### Required headers
+#### Required Headers
 |Name|Value|
 |----|-----|
 |x-guest-token|The token you recieved from the activation endpoint|
 |authorization|Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA|
 
 
-### User's tweets
+### User's Tweets
 
 #### Description
 Return a list of tweets by a specific user
@@ -65,26 +65,26 @@ https://twitter.com/i/api/graphql/tuxTEoMUHJKKITSu6jPj4w/UserTweets
 GET
 
 #### Parameters
-|Name|Required|Value|
-|----|--------|-----|
-|variables|:heavy_check_mark:|A percentage encoded dictionary (see below)|
+|Name|Required|Type|Value|
+|----|--------|----|-----|
+|variables|:heavy_check_mark:|String|A percentage encoded json dictionary (see below)|
 
 ##### variables dictionary values
-|Key|Required|Value|
-|---|--------|-----|
-|userId|:heavy_check_mark:|The user's id as a string (see "User ID and other information")|
-|count|:heavy_check_mark:|The number of tweets to get|
-|withHighlightedLabel|:heavy_check_mark:|Some boolean value, no idea what it does, just set it to false|
-|withTweetQuoteCount|:heavy_check_mark:|Boolean, include how often the tweet was quoted|
-|includePromotedContent|:heavy_check_mark:|Some boolean value, no idea what it does, just set it to false|
-|withTweetResult|:heavy_check_mark:|Some boolean value, no idea what it does, just set it to false|
-|withReactions|:heavy_check_mark:|Some boolean value, no idea what it does, just set it to false|
-|withSuperFollowsTweetFields|:heavy_check_mark:|Some boolean value, no idea what it does, just set it to false|
-|withSuperFollowsUserFields|:heavy_check_mark:|Some boolean value, no idea what it does, just set it to false|
-|withVoice|:heavy_check_mark:|Some boolean value, no idea what it does, just set it to false|
-|withBirdwatchPivots|:heavy_check_mark:|Some boolean value, no idea what it does, just set it to false|
+|Key|Required|Type|Value|
+|---|--------|----|-----|
+|userId|:heavy_check_mark:|String|The user's id (see "User ID and other User Information")|
+|count|:heavy_check_mark:|Integer|The number of tweets to get|
+|withHighlightedLabel|:heavy_check_mark:|Boolean|No idea what it does, just set it to false|
+|withTweetQuoteCount|:heavy_check_mark:|Boolean|Include how often the tweet was quoted|
+|includePromotedContent|:heavy_check_mark:|Boolean|No idea what it does, just set it to false|
+|withTweetResult|:heavy_check_mark:|Boolean|No idea what it does, just set it to false|
+|withReactions|:heavy_check_mark:|Boolean|No idea what it does, just set it to false|
+|withSuperFollowsTweetFields|:heavy_check_mark:|Boolean|No idea what it does, just set it to false|
+|withSuperFollowsUserFields|:heavy_check_mark:|Boolean|No idea what it does, just set it to false|
+|withVoice|:heavy_check_mark:|Boolean|No idea what it does, just set it to false|
+|withBirdwatchPivots|:heavy_check_mark:|Boolean|No idea what it does, just set it to false|
 
-#### Required headers
+#### Required Headers
 |Name|Value|
 |----|-----|
 |x-guest-token|The token you recieved from the activation-endpoint|
@@ -103,36 +103,36 @@ https://twitter.com/i/api/2/search/adaptive.json
 GET
 
 #### Parameters
-|Name|Required|Values|
+|Name|Required|Type|Values|
 |----|--------|------|
-|include_profile_interstitial_type| |Boolean. Include some profile_interstitial_type parameter for users included in the answer|
-|include_blocking| |Boolean. Include the users a user included in the answer has blocked|
-|include_blocked_by| |Boolean. Include the users a user included in the answer has been blocked by|
-|include_followed_by| |Boolean. Include the users following a user included in the answer|
-|include_want_retweets| |Boolean. Include some want_retweets parameter for users included in the answer|
-|include_mute_edge| |Boolean. Include some muting parameter for users included in the answer|
-|include_can_dm| |Boolean. Include some can_dm parameter for users included in the answer|
-|include_can_media_tag| |Boolean. Seems to do nothing|
-|skip_status| |Boolean. Seems to do nothing|
-|cards_platform| |String. Platform for tweet cards fields (link previews). Twitter's website uses "Web-12"|
-|include_cards| |Boolean. Include tweet cards (link previews)|
-|include_ext_alt_text| |Boolean. Include alt text for extended entities|
-|include_quote_count| |Boolean. Include tweets' quote counts|
-|include_reply_count| |Boolean. Include tweets' reply count|
-|tweet_mode| |String. Defines the verbosity of information about tweets. Twitter's website uses "extended"|
-|include_entities| |Boolean. Include tweets' entities (hashtags,symbols,user mentions,urls,media)|
-|include_ext_media_color| |Boolean. Include extensions media colors|
-|include_ext_media_availability| |Boolean. Include extensions media availability (seems to always be null)|
-|include_error_codes| |Boolean. ?|
-|simbple_quoted_tweet| |Boolean. ?|
-|q|:heavy_check_mark:|String. The search string|
-|count| |Integer. The number of results|
-|query_source| |String. ?. Twitter's website uses "typed_query"|
-|pc| |Boolean. Seems to do nothing|
-|spelling_corrections| |Boolean. Seems to do nothing|
-|ext| |String. Percentage encoded comma separated fields to include in "ext" field|
+|include_profile_interstitial_type| |Boolean|Include some profile_interstitial_type parameter for users included in the answer|
+|include_blocking| |Boolean|Include the users a user included in the answer has blocked|
+|include_blocked_by| |Boolean|Include the users a user included in the answer has been blocked by|
+|include_followed_by| |Boolean|Include the users following a user included in the answer|
+|include_want_retweets| |Boolean|Include some want_retweets parameter for users included in the answer|
+|include_mute_edge| |Boolean|Include some muting parameter for users included in the answer|
+|include_can_dm| |Boolean|Include some can_dm parameter for users included in the answer|
+|include_can_media_tag| |Boolean|Seems to do nothing|
+|skip_status| |Boolean|Seems to do nothing|
+|cards_platform| |String|Platform for tweet cards fields (link previews). Twitter's website uses "Web-12"|
+|include_cards| |Boolean|Include tweet cards (link previews)|
+|include_ext_alt_text| |Boolean|Include alt text for extended entities|
+|include_quote_count| |Boolean|Include tweets' quote counts|
+|include_reply_count| |Boolean|Include tweets' reply count|
+|tweet_mode| |String|Defines the verbosity of information about tweets. Twitter's website uses "extended"|
+|include_entities| |Boolean|Include tweets' entities (hashtags,symbols,user mentions,urls,media)|
+|include_ext_media_color| |Boolean|Include extensions media colors|
+|include_ext_media_availability| |Boolean|Include extensions media availability (seems to always be null)|
+|include_error_codes| |Boolean|?|
+|simbple_quoted_tweet| |Boolean|?|
+|q|:heavy_check_mark:|String|The search string|
+|count| |Integer|The number of results|
+|query_source| |String|?. Twitter's website uses "typed_query"|
+|pc| |Boolean|Seems to do nothing|
+|spelling_corrections| |Boolean|Seems to do nothing|
+|ext| |String|Percentage encoded comma separated fields to include in "ext" field|
 
-#### Required headers
+#### Required Headers
 |Name|Value|
 |----|-----|
 |x-guest-token|The token you recieved from the activation-endpoint|
