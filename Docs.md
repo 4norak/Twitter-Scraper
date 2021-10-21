@@ -89,3 +89,51 @@ GET
 |----|-----|
 |x-guest-token|The token you recieved from the activation-endpoint|
 |authorization|Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA|
+
+
+### Search
+
+#### Description
+Search twitter
+
+#### URL
+https://twitter.com/i/api/2/search/adaptive.json
+
+#### Request Method
+GET
+
+#### Parameters
+|Name|Required|Values|
+|----|--------|------|
+|include_profile_interstitial_type| |Boolean. Include some profile_interstitial_type parameter for users included in the answer|
+|include_blocking| |Boolean. Include the users a user included in the answer has blocked|
+|include_blocked_by| |Boolean. Include the users a user included in the answer has been blocked by|
+|include_followed_by| |Boolean. Include the users following a user included in the answer|
+|include_want_retweets| |Boolean. Include some want_retweets parameter for users included in the answer|
+|include_mute_edge| |Boolean. Include some muting parameter for users included in the answer|
+|include_can_dm| |Boolean. Include some can_dm parameter for users included in the answer|
+|include_can_media_tag| |Boolean. Seems to do nothing|
+|skip_status| |Boolean. Seems to do nothing|
+|cards_platform| |String. Platform for tweet cards fields (link previews). Twitter's website uses "Web-12"|
+|include_cards| |Boolean. Include tweet cards (link previews)|
+|include_ext_alt_text| |Boolean. Include alt text for extended entities|
+|include_quote_count| |Boolean. Include tweets' quote counts|
+|include_reply_count| |Boolean. Include tweets' reply count|
+|tweet_mode| |String. Defines the verbosity of information about tweets. Twitter's website uses "extended"|
+|include_entities| |Boolean. Include tweets' entities (hashtags,symbols,user mentions,urls,media)|
+|include_ext_media_color| |Boolean. Include extensions media colors|
+|include_ext_media_availability| |Boolean. Include extensions media availability (seems to always be null)|
+|include_error_codes| |Boolean. ?|
+|simbple_quoted_tweet| |Boolean. ?|
+|q|:heavy_check_mark:|String. The search string|
+|count| |Integer. The number of results|
+|query_source| |String. ?. Twitter's website uses "typed_query"|
+|pc| |Boolean. Seems to do nothing|
+|spelling_corrections| |Boolean. Seems to do nothing|
+|ext| |String. Percentage encoded comma separated fields to include in "ext" field|
+
+#### Required headers
+|Name|Value|
+|----|-----|
+|x-guest-token|The token you recieved from the activation-endpoint|
+|authorization|Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA|
