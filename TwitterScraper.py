@@ -37,5 +37,5 @@ def get_user_tweets(guestToken: str, userId: str, count: int, **kwargs) -> List[
     params.update(kwargs)
     r = requests.get(f"{TwitterResources.ENDPOINT_TWEETS}?variables={parse.quote(json.dumps(params))}",
             headers={"authorization": TwitterResources.BEARER_TOKEN, "x-guest-token": guestToken})
-    tweetIds = [tweet["content"]["itemContent"]["tweet"]["rest_id"] for tweet in r.json()["data"]["user"]["result"]["timeline"]["timeline"]["instructions"][0]["entries"][:count]]
+    tweetIds = [tweet["content"]["itemContent"]["tweet"]["rest_id"] for tweet in r.json()["data"]["user"]["result"]["timeline"]["timeline"]["instructions"][1]["entries"][:count]]
     return tweetIds
