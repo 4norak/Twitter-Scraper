@@ -1,6 +1,10 @@
 # Twitter Secret API
 
 
+> **Note**  
+> The graphql-endpoints do not seem to exist anymore.
+
+
 ## Endpoints
 
 
